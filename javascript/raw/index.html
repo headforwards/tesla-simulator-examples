@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Send commands to Tesla API with JavaScript</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
+
+<body>
+    <div class="page">
+        <h1>Send commands to Tesla API</h1>
+        <div class="wrapper">
+            <h2>Step 1: Login</h2>
+            <div class="clear">
+            <label for="email">Email / Username</label>
+            <input type="text" name="email" value="testing">
+              
+            </div>
+            <button id="login-button" onclick="login()">Login</button>
+        </div>
+        <div class="wrapper step-2">
+            <h2>Step 2: List Vehicles</h2>
+            <button disabled id="list-vehicles-button" onclick="listVehicles()">List Vehicles</button>
+        </div>
+        <div class="wrapper step-3">
+            <h2>Step 3: Choose Vehicle</h2>
+            <select id="vehicle-list" onchange="selectVehicle()" disabled>
+            </select>
+        </div>
+        <div class="wrapper step-4">
+            <h2>Step 4: Send commands</h2>
+            <button disabled class="action" onclick="sendCommand('honk_horn')">Honk the horn!</button>
+            <button disabled class="action" onclick="sendCommand('lights_on')">Turn the lights on</button>
+            <button disabled class="action" onclick="sendCommand('lights_off')">Turn the lights off</button>
+            <button disabled class="action" onclick="sendCommand('wake_up')">Wake Up Car</button>
+            <button disabled class="action" onclick="sendCommand('start_charging')">Start charging</button>
+            <button disabled class="action" onclick="sendCommand('stop_charging')">Stop charging</button>
+            <button disabled class="action" onclick="sendCommand('invalid')">Invalid command</button>
+        </div>
+         <div class="wrapper step-5">
+            <h2>Step 5: Get information</h2>
+            <button disabled class="action" onclick="getInfo('charge_state')">Charge State </button>
+            <button disabled class="action" onclick="getInfo('climate_state')">Climate State</button>
+            <button disabled class="action" onclick="getInfo('drive_state')">Driving and Position</button>
+            <button disabled class="action" onclick="getInfo('invalid')">Invalid request</button>
+        </div>
+        <div class="wrapper">
+            <h2>Messages</h2>
+            <ul id="messages" class="message-list"></ul>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
