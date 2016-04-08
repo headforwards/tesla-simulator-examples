@@ -1,4 +1,7 @@
-var baseUrl = 'http://127.0.0.1:8000';
+var baseUrl = window.location.protocol + '//' + window.location.hostname;
+if(window.location.port.length) {
+    baseUrl += ':' + window.location.port;
+}
 var apiPath = '/api/1/';
 var accessToken;
 var currentVehicle;
